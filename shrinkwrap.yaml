@@ -1,5 +1,6 @@
 dependencies:
   bcrypt-node: 0.1.0
+  bcrypt-nodejs: 0.0.3
   body-parser: 1.18.3
   express: 4.16.3
   express-session: 1.15.6
@@ -30,6 +31,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Ol3OQ1JwqEQq2BTmUq6+poN2YLk=
+  /bcrypt-nodejs/0.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-xgkX8m3CNWYVZsaBBhwwPCsohCs=
   /bluebird/3.5.0:
     dev: false
     resolution:
@@ -617,6 +622,7 @@ shrinkwrapMinorVersion: 7
 shrinkwrapVersion: 3
 specifiers:
   bcrypt-node: ^0.1.0
+  bcrypt-nodejs: ^0.0.3
   body-parser: ^1.18.3
   express: ^4.16.3
   express-session: ^1.15.6

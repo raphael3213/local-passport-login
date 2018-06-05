@@ -1,16 +1,17 @@
 var passportLocal=require('passport-local').Strategy;
 var Users=require('../models/users');
 
+
 module.exports=function(passport)
 {
 
-  passport.serializeUrl(function(user,done){
+  passport.serializeUser(function(user,done){
   
     done(null,user._id);
   
   })
   
-    passport.deserializeUrl(function(id,done){
+    passport.deserializeUser(function(id,done){
   
     Users.findById(id,function(err,user){
     
