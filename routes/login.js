@@ -1,11 +1,8 @@
 var router=require('express').Router();
 var passport=require('passport')
-router.get('/login',function(req,res,next)
-           {
-})
 
 
-router.post('/register',passport.authenticate('login',{
+router.post('/register',passport.authenticate('register',{
 successRedirect:'/profile'
 ,failureRedirect:'/error'
 }))

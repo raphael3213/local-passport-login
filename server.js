@@ -19,7 +19,7 @@ console.log("Connection success");
 
 
 app.use(bp.json())
-app.use(bp.urlencoded({extended:true}))
+app.use(bp.urlencoded({extended:false}))
 app.use(session({
 
 secret:"this is a cookie"
@@ -34,10 +34,11 @@ pass(passport);
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
+app.use(passport.initialize());
+app.use(passport.session());
+app.use('/auth',logger);
 
-app.get('/auth',logger);
 
-app.use(passpot.initializ)
 
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
