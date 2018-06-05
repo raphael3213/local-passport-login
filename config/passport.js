@@ -29,7 +29,12 @@ module.exports=function(passport)
     if(!User){
     return done(null,false);
     }
-      if(User.password!=passwor
+      if(User.password!=User.unhasher(password)){
+      return done(null,false)
+      }
+      
+      return done(null,User);
+      
     
     })
     
@@ -37,7 +42,33 @@ module.exports=function(passport)
     }
   
   ))
-
+  
+  passport.use('register',function(req,username,password,done)
+               {
+  
+    Users.findOne({user:username},function(err,user)
+                  {
+    if(user)
+    {
+    done(null,false)
+    }
+      
+     else{
+     var newUser=new Users();
+       newUser.user=username;
+       newUser.password=Users.hasher(password);
+     newUser.save(function(err){
+     if(err){console.log("error in storing in database")
+            done(null,false);
+            }
+       done(null,newUser);
+       
+     })
+     } 
+      
+    })
+    
+  })
 
 }
   
