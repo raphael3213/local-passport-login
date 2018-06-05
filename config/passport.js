@@ -24,8 +24,8 @@ module.exports=function(passport)
   
   passport.use('register',new passportLocal(
                
-    {passReqToCallback: true},
-               function(req,username,password,done)
+    //{passReqToCallback: true}, if this is added then we need to pass req as a parameter in the below function
+               function(username,password,done)
                {
   
     Users.findOne({user:username},function(err,user)
