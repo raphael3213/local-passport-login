@@ -8,7 +8,7 @@ var session=require('express-session');
 var pass=require('./config/passport');
 var logger=require('./routes/login')
 app.use(express.static('public'));
-
+var cookieParser = require('cookie-parser');
 mongoose.connect(process.env.URI,function(err){
   
   
@@ -17,7 +17,9 @@ mongoose.connect(process.env.URI,function(err){
 console.log("Connection success");
 })
 
+pass(passport);
 
+app.use(cookieParser());
 app.use(bp.json())
 app.use(bp.urlencoded({extended:false}))
 app.use(session({
@@ -28,7 +30,6 @@ secret:"this is a cookie"
 
 }))
 
-pass(passport);
 
 
 app.get("/", function (request, response) {
