@@ -27,20 +27,34 @@
       </h1>
     </header>
 
-    <main>
+    
       <p class="bold">Oh hi,</p>
       
       <p>Tell me your hopes and dreams:</p>
       
-      <form>
-        <input name="dream" type="text" maxlength="100" placeholder="Dreams!" aria-labelledby="submit-dream">
-        <button type="submit" id="submit-dream">Submit Dream</button>
+      <form action="login" method="post">
+        
+        <label for="username">Username:</label>
+        <input name="username">
+        <label for="password">Password:</label>
+        <input name="password">
+        
+        <button type="submit" id="submit-dream">login</button>
       </form>
       
+       <form action="register" method="post">
+        
+        <label for="username">Username:</label>
+        <input name="username">
+        <label for="password">Password:</label>
+        <input name="password">
+        
+        <button type="submit" id="dream">register</button>
+      </form>
       <section class="dreams">
         <ul id="dreams"></ul>
       </section>
-    </main>
+    
 
     <footer>
       Made with <a href="https://glitch.com">Glitch</a>!
