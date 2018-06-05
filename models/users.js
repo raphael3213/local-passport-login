@@ -16,9 +16,9 @@ var userSchema=mongoose.Schema(
   });
 
 
-var hasher=function(password)
+userSchema.methods.generateHash=function(password)
 {
-return bcrypt.hashSync(password,10);
+return bcrypt.hashSync(password,bcrypt.genSaltSync(8),null);
 }
 
 var unhasher=function(password)

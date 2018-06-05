@@ -24,7 +24,7 @@ module.exports=function(passport)
   
   passport.use('register',new passportLocal(
                
-               
+    {passReqToCallback: true},
                function(req,username,password,done)
                {
   
@@ -38,10 +38,10 @@ module.exports=function(passport)
      else{
      var newUser=new Users();
        newUser.user=username;
-       newUser.password=Users.hasher(password);
+       newUser.password=newUser.generateHash(password);
      newUser.save(function(err){
      if(err){console.log("error in storing in database")
-            done(null,false);
+            
             }
        return done(null,newUser);
        
