@@ -51,7 +51,7 @@ module.exports=function(passport)
                   {
     if(user)
     {
-    done(null,false)
+    return done(null,false)
     }
       
      else{
@@ -62,7 +62,7 @@ module.exports=function(passport)
      if(err){console.log("error in storing in database")
             done(null,false);
             }
-       done(null,newUser);
+       return done(null,newUser);
        
      })
      } 

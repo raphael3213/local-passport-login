@@ -36,7 +36,8 @@ app.get("/", function (request, response) {
 });
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/auth',logger);
+logger(app,passport);
+
 
 
 
