@@ -1,4 +1,4 @@
-
+.
 module.exports=function(app,passport)
 {
 app.get('/auth/register', function(req, res){
