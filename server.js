@@ -7,9 +7,10 @@ var passport=require('passport');
 var session=require('express-session');
 var pass=require('./config/passport');
 var logger=require('./routes/login')
+var helmet=require('helmet')
 app.use(express.static('public'));
 var cookieParser = require('cookie-parser');
-
+app.use(helmet());
 mongoose.connect(process.env.URI,function(err){
     if(err){console.log(err)}
 console.log("Connection success");
