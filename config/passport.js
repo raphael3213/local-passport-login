@@ -55,7 +55,7 @@ module.exports=function(passport)
   
   passport.use('login',new passportLocal(
   
-  function(req,username,password,done)
+  function(username,password,done)
     {
     Users.findOne({user:username},function(err,User)
                   {

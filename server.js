@@ -6,7 +6,7 @@ var bp=require('body-parser');
 var passport=require('passport');
 var session=require('express-session');
 var pass=require('./config/passport');
-//var logger=require('./routes/login')
+var logger=require('./routes/login')
 app.use(express.static('public'));
 var cookieParser = require('cookie-parser');
 mongoose.connect(process.env.URI,function(err){
@@ -37,7 +37,7 @@ app.get("/", function (request, response) {
 });
 app.use(passport.initialize());
 app.use(passport.session());
-//logger(app,passport);
+logger(app,passport);
 
 
 

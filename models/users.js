@@ -1,5 +1,4 @@
 
-  
 var mongoose=require('mongoose');
 var bcrypt=require('bcrypt-nodejs');
 
@@ -23,7 +22,7 @@ userSchema.methods.generateHash=function(password)
 return bcrypt.hashSync(password,bcrypt.genSaltSync(8),null);
 }
 
-var unhasher=function(password)
+userSchema.method.=function(password)
 {
 return bcrypt.compareSync(password,this.password)
 }
