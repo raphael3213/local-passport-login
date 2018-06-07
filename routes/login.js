@@ -25,7 +25,7 @@ successRedirect:'/profile1'
     });
   
   app.get('/profile1', isLoggedIn, function(req,res){
-    res.render('profile',{username:req.user.user}) 
+    res.render('profile',{username:"moron"}) 
     //res.json({message:"welcome back user"});
     });
   app.get('/error',function(req,res,next){
