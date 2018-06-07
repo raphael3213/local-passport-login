@@ -16,8 +16,8 @@ console.log("Connection success");
 })
 
 
- app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/public/views');
+ app.use(express.static(__dirname + '/views'));
+app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
