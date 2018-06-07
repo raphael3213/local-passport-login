@@ -22,7 +22,7 @@ userSchema.methods.generateHash=function(password)
 return bcrypt.hashSync(password,bcrypt.genSaltSync(8),null);
 }
 
-userSchema.method.=function(password)
+userSchema.methods.unhasher=function(password)
 {
 return bcrypt.compareSync(password,this.password)
 }

@@ -62,7 +62,7 @@ module.exports=function(passport)
     if(!User){
     return done(null,false);
     }
-      if(User.password!=User.unhasher(password)){
+      if(!User.unhasher(password)){
       return done(null,false)
       }
       
