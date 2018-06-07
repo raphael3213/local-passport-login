@@ -1,6 +1,10 @@
 
 module.exports=function(app,passport)
 {
+  
+  
+  
+ 
 app.get('/auth/register', function(req, res){
         res.json({message:"yo"});
     });
@@ -21,7 +25,8 @@ successRedirect:'/profile1'
     });
   
   app.get('/profile1', isLoggedIn, function(req,res){
-        res.json({message:"welcome back user"});
+    res.render('profile',{username:req.user.user}) 
+    //res.json({message:"welcome back user"});
     });
   app.get('/error',function(req,res,next){
   

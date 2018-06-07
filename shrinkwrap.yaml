@@ -3,6 +3,7 @@ dependencies:
   bcrypt-nodejs: 0.0.3
   body-parser: 1.18.3
   cookie-parser: 1.4.3
+  ejs: 2.6.1
   express: 4.16.3
   express-session: 1.15.6
   mongoose: 5.1.4
@@ -147,6 +148,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+  /ejs/2.6.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-0xy4A/twfrRCnkhfk8ErDi5DqdAsAqeGxht4xkCUrsvhhbQNs7E+4jV0CN7+NKIY0aHE72+XvqtBIXzD31ZbXQ==
   /encodeurl/1.0.2:
     dev: false
     engines:
@@ -635,6 +642,7 @@ specifiers:
   bcrypt-nodejs: ^0.0.3
   body-parser: ^1.18.3
   cookie-parser: ^1.4.3
+  ejs: ^2.6.1
   express: ^4.16.3
   express-session: ^1.15.6
   mongoose: ^5.1.4

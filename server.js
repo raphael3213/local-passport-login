@@ -9,19 +9,27 @@ var pass=require('./config/passport');
 var logger=require('./routes/login')
 app.use(express.static('public'));
 var cookieParser = require('cookie-parser');
-mongoose.connect(process.env.URI,function(err){
-  
-  
-  if(err){console.log(err)}
 
+mongoose.connect(process.env.URI,function(err){
+    if(err){console.log(err)}
 console.log("Connection success");
 })
+
+
+ app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+
 
 pass(passport);
 
 app.use(cookieParser());
 app.use(bp.json())
 app.use(bp.urlencoded({extended:false}))
+
+
 app.use(session({
 
 secret:"this is a cookie"
@@ -35,6 +43,9 @@ secret:"this is a cookie"
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
+
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 logger(app,passport);
