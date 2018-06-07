@@ -25,7 +25,7 @@ successRedirect:'/profile1'
     });
   
   app.get('/profile1', isLoggedIn, function(req,res){
-    res.render('profile',{username:"moron"}) 
+    res.render('profile',{username:req.user.user}) 
     //res.json({message:"welcome back user"});
     });
   app.get('/error',function(req,res,next){
@@ -37,7 +37,11 @@ successRedirect:'/profile1'
     res.json({Error_message:"Username/password incorrect"});
   })
 
+app.get('/logout',function(req,res,next){
+req.logout();
+  res.redirect('/')
 
+})
 }
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated())
